@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+/* css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: #252a34;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 42px;
+    letter-spacing: 0.01em;
+}
+
+.nav-link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+}
+
+nav .kanan .login {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #537fe7 !important;
+}
+
+nav .kanan .signup {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #ffffff !important;
+    background-color: #537fe7 !important;
+}
+
+/* Footer */
+.footer {
+    background-color: #3c486b;
+    min-height: 60vh;
+}
+
+.footer h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 42px;
+    letter-spacing: 0.01em;
+}
+
+.footer h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+}
+
+.footer .copytext {
+    margin-top: 100px;
+    padding-top: 12px;
+    border-top: 2px solid #9ba4b5;
+}
+
+/* LANDING PAGE */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url("../css/bengkels.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.keunggulan {
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.title {
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 63px;
+    letter-spacing: 0.01em;
+}
+
+.keunggulan .keunggulan-list {
+    background-color: #ff9d33 !important;
+    border-radius: 8px;
+    padding: 40px 12px 20px 12px;
+    margin-bottom: 20px;
+}
+
+.keunggulan .keunggulan-list h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 20px;
+    letter-spacing: 0.01em;
+}
+
+.keunggulan .keunggulan-list p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    margin-bottom: 12px;
+}
+
+.layanan {
+    margin-bottom: 200px;
+}
+
+.layanan .title {
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 63px;
+    letter-spacing: 0.01em;
+}
+
+.layanan .motor {
+    margin-bottom: 40px;
+}
+
+.layanan img {
+    width: 470px;
+    height: 470px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.layanan h3 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.01em;
+}
+
+.layanan p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.01em;
+    margin-top: 20px;
+}
+
+.layanan a {
+    background: #537fe7;
+    border-radius: 8px;
+    color: #ffffff !important;
+    margin-top: 40px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+}
+
+/* SERVICE PAGE */
+.service {
+    margin: 100px 0 200px 0;
+}
+
+.service form input {
+    height: 60px;
+}
+
+.service a.icon-mobil,
+a.icon-motor {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.service .bengkel {
+    margin-top: 40px;
+}
+
+.service .card {
+    filter: drop-shadow(0px 24px 34px rgba(0, 0, 0, 0.1));
+    border-radius: 8px;
+}
+
+.service .card img {
+    height: 15rem;
+    object-fit: cover;
+}
+
+.service .card .location {
+    margin: 12px;
+}
+
+.service .card .location img {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.service .card .location p {
+    margin: 0 !important;
+}
