@@ -24,7 +24,8 @@ class ProductUMKMController extends Controller
 
     public function create()
     {
-        $umkm = Umkm::orderBy('name', 'ASC')->get();
+
+        $umkm = Umkm::where('id_pelaku_umkm', Auth::id())->orderBy('name', 'ASC')->get();
         return view('umkm/product/add', ['umkms' => $umkm]);
     }
 
@@ -67,7 +68,7 @@ class ProductUMKMController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        $umkm = Umkm::orderBy('name', 'ASC')->get();
+        $umkm = Umkm::where('id_pelaku_umkm', Auth::id())->orderBy('name', 'ASC')->get();
 
         return view('umkm/product/edit', ['product' => $product, 'umkms' => $umkm]);
     }
