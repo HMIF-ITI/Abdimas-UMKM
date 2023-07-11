@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UmkmController;
 
 /*
@@ -28,6 +29,7 @@ Route::get('/userregister', [AuthController::class, "userregister"])->name('user
 Route::get('/ownerregister', [AuthController::class, "ownerregister"])->name('ownerregister');
 Route::post('/userregister', [AuthController::class, "douserregister"])->name('do.userregister');
 Route::post('/ownerregister', [AuthController::class, "doownerregister"])->name('do.ownerregister');
+Route::get('/productpage', [ProductController::class, 'index']);
 
 // UMKM
 Route::get('/umkm', [UmkmController::class, 'index'])->name('umkmindex');
