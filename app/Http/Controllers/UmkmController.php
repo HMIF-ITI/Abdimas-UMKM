@@ -13,9 +13,9 @@ class UmkmController extends Controller
     public function index()
     {
         $id = Auth::user()->id;
-        $owner = PelakuUmkm::all()->where('id', $id);
         $umkm = Umkm::all()->where('id_pelaku_umkm', $id);
-        return view('umkm/index', ['umkms' => $umkm, 'owners' => $owner]);
+
+        return view('umkm/index', ['umkms' => $umkm]);
     }
 
     public function create()
@@ -32,7 +32,7 @@ class UmkmController extends Controller
         // validasi form
         $validated = $request->validate([
             'name' => 'required',
-            'description' => 'required',
+            'description' => 'required|max:300',
             'link_address' => 'required',
             'address' => 'required',
             'id_pelaku_umkm' => 'required',
@@ -52,7 +52,7 @@ class UmkmController extends Controller
             'image' => $saveImage['image']
         ]);
 
-        return redirect('/umkm');
+        return redirect('/umkm')->with('success', 'UMKM Berhasil Dibuat!');
     }
 
     public function detail($id)
@@ -75,15 +75,12 @@ class UmkmController extends Controller
     {
         $umkm = Umkm::findOrFail($id);
 
-        $id = Auth::user()->id;
-        $owner = PelakuUmkm::all()->where('id', $id);
-
         $validated = $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'link_address' => 'required',
-            'address' => 'required',
-            'id_pelaku_umkm' => 'required',
+            'name' => 'string',
+            'description' => 'string',
+            'link_address' => 'string',
+            'address' => 'string',
+            'id_pelaku_umkm' => 'string',
             'image' => 'mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -107,13 +104,13 @@ class UmkmController extends Controller
         ]);
 
 
-        return redirect()->route('umkmindex');
+        return redirect()->route('umkmindex')->with('success', 'UMKM Berhasil Diubah!');
     }
 
     public function destroy($id)
     {
         Umkm::destroy($id);
 
-        return redirect()->route('umkmindex');
+        return redirect()->route('umkmindex')->with('success', 'UMKM Berhasil Dihapus!');
     }
 }

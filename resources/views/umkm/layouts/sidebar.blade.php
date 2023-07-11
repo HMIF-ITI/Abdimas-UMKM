@@ -37,7 +37,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Owner Menu</h6>
                 <a class="collapse-item" href="{{ '/umkm' }}">UMKM</a>
-                <a class="collapse-item" href="{{ '/umkm/addproduct' }}">Product</a>
+                <a class="collapse-item" href="{{ '/umkm/product' }}">Product</a>
                 <a class="collapse-item" href="{{ '/transaction' }}">Transactions</a>
             </div>
         </div>

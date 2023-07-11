@@ -27,8 +27,8 @@
                 <div class="col col-lg-4">
                     <h4>Action</h4>
                     <div class="mt-3 d-flex justify-content-between">
-                        <a href="/detailumkm/{{ $umkm->id }}/edit" class="btn btn-md btn-warning">Edit UMKM</a>
-                        <a href="/detailumkm/{{ $umkm->id }}/delete" class="btn btn-md btn-danger">Hapus UMKM</a>
+                        <a href="/umkm/detailumkm/{{ $umkm->id }}/edit" class="btn btn-md btn-warning">Edit UMKM</a>
+                        <a href="/umkm/detailumkm/{{ $umkm->id }}/delete" class="btn btn-md btn-danger">Hapus UMKM</a>
                     </div>
                 </div>
             </div>

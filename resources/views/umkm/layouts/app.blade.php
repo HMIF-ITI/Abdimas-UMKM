@@ -46,6 +46,7 @@
 
                     <!-- Content Row -->
                     @yield('content')
+                    @include('sweetalert::alert')
                 </div>
 
             </div>
@@ -93,6 +94,7 @@
 
     <!-- Page level plugins -->
     <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductUMKMController;
 use App\Http\Controllers\UmkmController;
 
 /*
@@ -33,11 +34,19 @@ Route::post('/ownerregister', [AuthController::class, "doownerregister"])->name(
 Route::get('/umkm', [UmkmController::class, 'index'])->name('umkmindex')->middleware('auth:pelakuumkm');
 Route::get('/umkm/add', [UmkmController::class, 'create'])->middleware('auth:pelakuumkm');
 Route::post('/umkm', [UmkmController::class, 'store'])->middleware('auth:pelakuumkm');
-Route::get('detailumkm/{id}', [UmkmController::class, 'detail'])->middleware('auth:pelakuumkm');
-Route::get('detailumkm/{id}/edit', [UmkmController::class, 'edit'])->middleware('auth:pelakuumkm');
-Route::put('detailumkm/{id}', [UmkmController::class, 'update'])->middleware('auth:pelakuumkm');
-Route::get('detailumkm/{id}/delete', [UmkmController::class, 'destroy'])->middleware('auth:pelakuumkm');
-// Route::get('/umkm/addproduct', [UmkmController::class, 'addProduct'])->middleware('auth:pelakuumkm');
+Route::get('/umkm/detailumkm/{id}', [UmkmController::class, 'detail'])->middleware('auth:pelakuumkm');
+Route::get('/umkm/detailumkm/{id}/edit', [UmkmController::class, 'edit'])->middleware('auth:pelakuumkm');
+Route::put('/umkm/detailumkm/{id}', [UmkmController::class, 'update'])->middleware('auth:pelakuumkm');
+Route::get('umkm/detailumkm/{id}/delete', [UmkmController::class, 'destroy'])->middleware('auth:pelakuumkm');
+
+// PRODUCT UMKM
+Route::get('/umkm/product', [ProductUMKMController::class, 'index'])->middleware('auth:pelakuumkm');
+Route::get('/umkm/product/add', [ProductUMKMController::class, 'create'])->middleware('auth:pelakuumkm');
+Route::post('/umkm/product', [ProductUMKMController::class, 'store'])->middleware('auth:pelakuumkm');
+Route::get('/umkm/product/detailproduct/{id}', [ProductUMKMController::class, 'detail'])->middleware('auth:pelakuumkm');
+Route::get('/umkm/product/{id}/edit', [ProductUMKMController::class, 'edit'])->middleware('auth:pelakuumkm');
+Route::put('/umkm/product/{id}', [ProductUMKMController::class, 'update'])->middleware('auth:pelakuumkm');
+Route::get('umkm/product/{id}/delete', [ProductUMKMController::class, 'destroy'])->middleware('auth:pelakuumkm');
 
 // ADMIN
 Route::get('/admin', [AdminController::class, 'index'])->name('adminindex');

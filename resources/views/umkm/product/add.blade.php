@@ -7,13 +7,29 @@
         <h3>Tambah Product</h3>
     </div>
     <!-- Create Post Form -->
-    <form action="{{ url('/product') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('/umkm/product') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <div class="mb-3">
+            <label for="id_umkm" class="form-label">Pilih UMKM</label>
+            <select class="form-select  @error('id_umkm') is-invalid @enderror" aria-label="Default select example"
+                name="id_umkm" id="id_umkm">
+                <option>Pilih UMKM</option>
+                @foreach ($umkms as $umkm)
+                    <option value="{{ $umkm->id }}">{{ $umkm->name }}</option>
+                @endforeach
+            </select>
+            <div id="emailHelp" class="form-text">UMKM tidak boleh kosong</div>
+            @error('id_umkm')
+                <div class="invalid-feedback">
+                    UMKM tidak boleh kosong
+                </div>
+            @enderror
+        </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nama Produk</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1"
                 aria-describedby="emailHelp" name="name">
-            <div id="emailHelp" class="form-text">Nama roduk tidak boleh lebih dari 255 karakter</div>
+            <div id="emailHelp" class="form-text">Nama produk tidak boleh lebih dari 255 karakter</div>
             @error('name')
                 <div class="invalid-feedback">
                     Nama tidak boleh kosong
