@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="/detailumkm/{{ $umkm->id }}" method="POST" enctype="multipart/form-data">
+                <form action="/umkm/detailumkm/{{ $umkm->id }}" method="POST" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="mb-3">
@@ -29,7 +29,7 @@
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
                         <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="exampleInputPassword1"
-                            name="description" placeholder="{{ $umkm->description }}"></textarea>
+                            name="description">{{ $umkm->description }}</textarea>
                         @error('description')
                             <div class="invalid-feedback">
                                 Deskripsi tidak boleh kosong

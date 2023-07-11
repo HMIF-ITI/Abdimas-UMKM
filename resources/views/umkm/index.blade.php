@@ -17,7 +17,7 @@
             @else
                 @foreach ($umkms as $umkm)
                     <div class="col">
-                        <a href="/detailumkm/{{ $umkm->id }}">
+                        <a href="/umkm/detailumkm/{{ $umkm->id }}">
                             <div class="card">
                                 <img src="{{ Storage::url($umkm->image) }}" class="img-fluid card-img-top">
                                 <div class="card-body">
