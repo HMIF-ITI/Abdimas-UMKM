@@ -179,7 +179,7 @@ nav .kanan .signup {
     letter-spacing: 0.01em;
 }
 
-/* SERVICE PAGE */
+/* UMKM PRODUCT PAGE */
 .umkm {
     margin: 100px 0 200px 0;
 }
@@ -191,4 +191,13 @@ nav .kanan .signup {
 
 .umkm .card .card-text {
     font-size: 12px;
+}
+
+.umkm .card .umkm-card-location {
+    margin-bottom: 10px;
+}
+
+/* DETAIL PRODUCT PAGE */
+.detail {
+    margin: 100px 0 200px 0;
 }

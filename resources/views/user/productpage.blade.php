@@ -34,49 +34,71 @@
         </div>
         <div class="umkm-card d-flex flex-row justify-content-center align-items-center">
             <div class="card mx-3">
-                <img src="/public/css/work.png" class="card-img-top" alt="...">
+                <img src="{{ asset('css/work.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
-                    <p class="card-text">Tangerang</p>
+                    <div class="umkm-card-location d-flex align-items-center">
+                        <img src="{{ asset('css/icon-location.png') }}" class="umkm-card-location-icon" alt="...">
+                        <p class="card-text">Tangerang</p>
+                    </div>
                     <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
+                <img src="{{ asset('css/work.png') }}" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
-                    <p class="card-text">Tangerang</p>
+                    <div class="umkm-card-location d-flex align-items-center">
+                        <img src="{{ asset('css/icon-location.png') }}" class="umkm-card-location-icon" alt="...">
+                        <p class="card-text">Tangerang</p>
+                    </div>
+                    <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
+                <img src="{{ asset('css/work.png') }}" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
-                    <p class="card-text">Tangerang</p>
+                    <div class="umkm-card-location d-flex align-items-center">
+                        <img src="{{ asset('css/icon-location.png') }}" class="umkm-card-location-icon" alt="...">
+                        <p class="card-text">Tangerang</p>
+                    </div>
+                    <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
         </div>
         <div class="umkm-card d-flex flex-row justify-content-center align-items-center">
             <div class="card mx-3">
-                <img src="/public/css/work.png" class="card-img-top" alt="...">
+                <img src="{{ asset('css/work.png') }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
-                    <p class="card-text">Tangerang</p>
-
+                    <div class="umkm-card-location d-flex align-items-center">
+                        <img src="{{ asset('css/icon-location.png') }}" class="umkm-card-location-icon" alt="...">
+                        <p class="card-text">Tangerang</p>
+                    </div>
+                    <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
+                <img src="{{ asset('css/work.png') }}" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
-                    <p class="card-text">Tangerang</p>
+                    <div class="umkm-card-location d-flex align-items-center">
+                        <img src="{{ asset('css/icon-location.png') }}" class="umkm-card-location-icon" alt="...">
+                        <p class="card-text">Tangerang</p>
+                    </div>
+                    <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
+                <img src="{{ asset('css/work.png') }}" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
-                    <p class="card-text">Tangerang</p>
+                    <div class="umkm-card-location d-flex align-items-center">
+                        <img src="{{ asset('css/icon-location.png') }}" class="umkm-card-location-icon" alt="...">
+                        <p class="card-text">Tangerang</p>
+                    </div>
+                    <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
         </div>
