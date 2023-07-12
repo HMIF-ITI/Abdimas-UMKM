@@ -11,14 +11,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductUMKMController extends Controller
 {
-    public function userProduct(Request $request)
-    {
-        // $keyword = $request->keyword;
-        // $bengkel = Bengkel::where('name', 'LIKE', '%' . $keyword . '%')
-        //     ->orWhere('alamat', $keyword)->paginate(10);
-        // return view('user/servicepage', ['bengkels' => $bengkel]);
-        return view('user/productpage');
-    }
     public function index()
     {
         $item['umkms'] = Umkm::where('id_pelaku_umkm', Auth::id())->get();

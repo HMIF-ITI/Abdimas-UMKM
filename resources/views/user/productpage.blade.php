@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col">
                 <div class="umkm-button">
-                    <div class="col d-flex justify-content-center align-items-center">                        
+                    <div class="col d-flex justify-content-center align-items-center">
                         <button type="button" class="btn btn-primary mx-3">Makanan</button>
                         <button type="button" class="btn btn-secondary mx-3">Fashion</button>
                         <button type="button" class="btn btn-secondary mx-3">Elektronik</button>
@@ -38,17 +38,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
                     <p class="card-text">Tangerang</p>
+                    <a href="/detailproductpage" class="btn btn-primary">Lihat Bengkel</a>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class="card-img-top" alt="...">
+                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
                     <p class="card-text">Tangerang</p>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class="card-img-top" alt="...">
+                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
                     <p class="card-text">Tangerang</p>
@@ -61,17 +62,18 @@
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
                     <p class="card-text">Tangerang</p>
+
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class="card-img-top" alt="...">
+                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
                     <p class="card-text">Tangerang</p>
                 </div>
             </div>
             <div class="card mx-3">
-                <img src="/public/css/work.png"" class="card-img-top" alt="...">
+                <img src="/public/css/work.png"" class=" card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Mutiara Jaya AC</h5>
                     <p class="card-text">Tangerang</p>
@@ -79,6 +81,12 @@
             </div>
         </div>
     </div>
+    <!-- <script>
+        function clickDetailProduct() {
+            // Tindakan yang ingin Anda lakukan saat elemen diklik
+            alert("Anda mengklik elemen!");
+        }
+    </script> -->
 </div>
 
 @endsection

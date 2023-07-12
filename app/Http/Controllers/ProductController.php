@@ -15,4 +15,9 @@ class ProductController extends Controller
         // return view('user/servicepage', ['bengkels' => $bengkel]);
         return view('user/productpage');
     }
+
+    public function detailProduct()
+    {
+        return view('user/detailproductpage');
+    }
 }
