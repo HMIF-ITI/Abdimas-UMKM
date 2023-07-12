@@ -180,45 +180,15 @@ nav .kanan .signup {
 }
 
 /* SERVICE PAGE */
-.service {
+.umkm {
     margin: 100px 0 200px 0;
 }
 
-.service form input {
-    height: 60px;
+.umkm .card {
+    width: 18rem;
+    margin-top: 100px;
 }
 
-.service a.icon-mobil,
-a.icon-motor {
-    height: 60px;
-    display: flex;
-    align-items: center;
-}
-
-.service .bengkel {
-    margin-top: 40px;
-}
-
-.service .card {
-    filter: drop-shadow(0px 24px 34px rgba(0, 0, 0, 0.1));
-    border-radius: 8px;
-}
-
-.service .card img {
-    height: 15rem;
-    object-fit: cover;
-}
-
-.service .card .location {
-    margin: 12px;
-}
-
-.service .card .location img {
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-}
-
-.service .card .location p {
-    margin: 0 !important;
+.umkm .card .card-text {
+    font-size: 12px;
 }
