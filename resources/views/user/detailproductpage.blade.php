@@ -37,7 +37,7 @@
                 </div>
                 <div class="product-button">
                     <a href="" class="btn btn-lg btn-info">Hubungi Penjual</a>
-                    <a href="" class="btn btn-lg btn-primary">Beli</a>
+                    <a href="{{ url('paymentpage') }}" class="btn btn-lg btn-primary">Beli</a>
                 </div>
             </div>
         </div>

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductUMKMController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UmkmController;
 
 /*
@@ -58,3 +59,4 @@ Route::get('/admin', [AdminController::class, 'index'])->name('adminindex');
 // Route::get('/productpage', [ProductUMKMController::class, 'userProduct']);
 Route::get('/productpage', [ProductController::class, 'index']);
 Route::get('/detailproductpage', [ProductController::class, 'detailProduct']);
+Route::get('/paymentpage', [PaymentController::class, 'index']);
