@@ -12,7 +12,7 @@
                 <form action="{{ url('/booking') }}" method="POST">
                     @csrf
                     <div class="mb-5">
-                        <h1 class="text-center font-weight-bold">Pesan Bengkel</h1>
+                        <h1 class="text-center font-weight-bold">Form Pembayaran</h1>
                         <div class="mb-3">
                             <h4 class="font-weight-bold mb-3">Data Customer </h4>
                             <label for="exampleInputName" class="form-label">Name</label>
@@ -27,6 +27,10 @@
                             <label for="typeNumber" class="form-label">Phone Number</label>
                             <input type="text" class="form-control" id="typeNumber" value="" name="phone_number">
                         </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <h5 class="fw-bold">Total: Rp{{ number_format($total_price, 0, ',', '.') }}</h5>
                     </div>
 
                     <div class="col-lg-12 d-flex justify-content-end">
