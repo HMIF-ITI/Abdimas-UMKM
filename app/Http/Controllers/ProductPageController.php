@@ -13,7 +13,7 @@ class ProductPageController extends Controller
     {
         $products = Product::with('umkm')
             ->get();
-        return view('user/productpage', ['products' => $products]);
+        return view('user/product/productpage', ['products' => $products]);
     }
 
     public function detail($id)
@@ -21,6 +21,6 @@ class ProductPageController extends Controller
         $product = Product::with(['umkm.pelaku_umkm'])
             ->findOrFail($id);
 
-        return view('user/detailproductpage', ['product' => $product]);
+        return view('user/product/detailproductpage', ['product' => $product]);
     }
 }

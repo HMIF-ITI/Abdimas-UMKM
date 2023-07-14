@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('umkm_id')->references('id')->on('umkms')->onDelete('cascade');
             $table->foreignId('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('qty');
             $table->timestamps();
         });

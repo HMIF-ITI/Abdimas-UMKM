@@ -6,7 +6,7 @@
 
     <div class="detail">
         <div class="container my-4">
-            <div class="row gx-lg-5">
+            <div class="row gx-lg-5 d-flex align-items-center">
                 <div class="col-lg-6 mb-5">
                     <img src="{{ Storage::url($product->image) }}" alt="" class="img-fluid rounded">
                 </div>
@@ -27,12 +27,18 @@
             <div class="row option p-3">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="product-name mb-3">
-                        <h5>Mutiara Jaya AC</h5>
+                        <h5>{{ $product->umkm->name }}</h5>
                         <a href="{{ $product->umkm->link_address }}">Lihat di Peta >>></a>
                     </div>
-                    <div class="product-button">
-                        <a href="" class="btn btn-lg btn-info">Hubungi Penjual</a>
-                        <a href="{{ url('paymentpage') }}" class="btn btn-lg btn-primary">Beli</a>
+                    <div class="product-button d-flex align-items-center">
+                        <a href="" class="btn btn-lg btn-warning text-white mx-4">Hubungi Penjual</a>
+                        <form action="{{ route('add_toCart', $product->id) }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="qty" value="1">
+                            {{-- <input type="hidden" name="umkm_id" value="{{ $product->umkm->id }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}"> --}}
+                            <button class="btn btn-lg btn-primary text-white">Masukkan ke Keranjang</button>
+                        </form>
                     </div>
                 </div>
             </div>
