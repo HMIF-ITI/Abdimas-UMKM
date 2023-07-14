@@ -13,7 +13,7 @@ class UmkmController extends Controller
     public function index()
     {
         $id = Auth::user()->id;
-        $umkm = Umkm::all()->where('id_pelaku_umkm', $id);
+        $umkm = Umkm::all()->where('pelaku_umkm_id', $id);
 
         return view('umkm/index', ['umkms' => $umkm]);
     }
@@ -35,7 +35,7 @@ class UmkmController extends Controller
             'description' => 'required|max:300',
             'link_address' => 'required',
             'address' => 'required',
-            'id_pelaku_umkm' => 'required',
+            'pelaku_umkm_id' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -48,7 +48,7 @@ class UmkmController extends Controller
             'description' => $validated['description'],
             'address' => $validated['address'],
             'link_address' => $validated['link_address'],
-            'id_pelaku_umkm' => $validated['id_pelaku_umkm'],
+            'pelaku_umkm_id' => $validated['pelaku_umkm_id'],
             'image' => $saveImage['image']
         ]);
 
@@ -80,7 +80,7 @@ class UmkmController extends Controller
             'description' => 'string',
             'link_address' => 'string',
             'address' => 'string',
-            'id_pelaku_umkm' => 'string',
+            'pelaku_umkm_id' => 'string',
             'image' => 'mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -99,7 +99,7 @@ class UmkmController extends Controller
             'description' => $validated['description'],
             'address' => $validated['address'],
             'link_address' => $validated['link_address'],
-            'id_pelaku_umkm' => $validated['id_pelaku_umkm'],
+            'pelaku_umkm_id' => $validated['pelaku_umkm_id'],
             'image' => $newImage['image'],
         ]);
 

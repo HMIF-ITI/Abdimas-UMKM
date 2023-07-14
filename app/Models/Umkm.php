@@ -10,7 +10,7 @@ class Umkm extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_pelaku_umkm',
+        'pelaku_umkm_id',
         'name',
         'image',
         'description',

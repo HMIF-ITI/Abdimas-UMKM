@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     @foreach ($owners as $owner)
-                        <input type="hidden" name="id_pelaku_umkm" id="id_pelaku_umkm" value="{{ $owner->id }}">
+                        <input type="hidden" name="pelaku_umkm_id" id="pelaku_umkm_id" value="{{ $owner->id }}">
                     @endforeach
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>

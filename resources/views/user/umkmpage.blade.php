@@ -20,18 +20,6 @@
     {{-- umkm --}}
     <div class="umkm">
         <div class="container">
-            {{-- <div class="row">
-                <div class="col">
-                    <div class="umkm-button">
-                        <div class="col d-flex justify-content-center align-items-center">
-                            <button type="button" class="btn btn-primary mx-3">Makanan</button>
-                            <button type="button" class="btn btn-secondary mx-3">Fashion</button>
-                            <button type="button" class="btn btn-secondary mx-3">Elektronik</button>
-                            <button type="button" class="btn btn-secondary mx-3">Jasa</button>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col col-lg-8">
                     <form action="" method="GET">
@@ -41,14 +29,13 @@
                 </div>
             </div>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                @foreach ($products as $product)
+                @foreach ($umkms as $umkm)
                     <div class="col">
-                        <a href="/detailproductpage/{{ $product->id }}">
+                        <a href="/detailumkmpage/{{ $umkm->id }}">
                             <div class="card">
-                                <img src="{{ Storage::url($product->image) }}" class="card-img-top" alt="...">
+                                <img src="{{ Storage::url($umkm->image) }}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $product->name }}</h5>
-                                    <p class="text-secondary">{{ $product->price }}</p>
+                                    <h5 class="card-title">{{ $umkm->name }}</h5>
                                 </div>
                             </div>
                         </a>

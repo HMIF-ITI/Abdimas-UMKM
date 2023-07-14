@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('detail_transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_umkm');
-            $table->foreign('id_umkm')->references('id')->on('umkms')->onDelete('cascade');
-            $table->foreignId('id_product');
-            $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
-            $table->foreignId('id_user');
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
-            $table->foreignId('id_transaction');
-            $table->foreign('id_transaction')->references('id')->on('transactions')->onDelete('cascade');
+            $table->foreignId('umkm_id');
+            $table->foreign('umkm_id')->references('id')->on('umkms')->onDelete('cascade');
+            $table->foreignId('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('transaction_id');
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
             $table->integer('qty');
             $table->string('status');
             $table->timestamps();

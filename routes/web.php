@@ -6,7 +6,10 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductUMKMController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ProductPageController;
+use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\UmkmController;
+use App\Http\Controllers\UmkmPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +59,8 @@ Route::get('/admin', [AdminController::class, 'index'])->name('adminindex');
 
 
 // USER
-// Route::get('/productpage', [ProductUMKMController::class, 'userProduct']);
-Route::get('/productpage', [ProductController::class, 'index']);
-Route::get('/detailproductpage', [ProductController::class, 'detailProduct']);
-Route::get('/paymentpage', [PaymentController::class, 'index']);
+Route::get('/productpage', [ProductPageController::class, 'index']);
+Route::get('/detailproductpage/{id}', [ProductPageController::class, 'detail']);
+Route::get('/umkmpage', [UmkmPageController::class, 'index']);
+Route::get('/detailumkmpage/{id}', [UmkmPageController::class, 'detail']);
+Route::get('/profilepage', [ProfileUserController::class, 'index']);

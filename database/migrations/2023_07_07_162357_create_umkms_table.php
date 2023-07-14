@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('umkms', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_pelaku_umkm');
-            $table->foreign('id_pelaku_umkm')->references('id')->on('pelaku_umkms')->onDelete('cascade');
+            $table->foreignId('pelaku_umkm_id');
+            $table->foreign('pelaku_umkm_id')->references('id')->on('pelaku_umkms')->onDelete('cascade');
             $table->string('name');
             $table->string('image');
             $table->string('description');

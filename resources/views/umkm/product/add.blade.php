@@ -10,16 +10,16 @@
     <form action="{{ url('/umkm/product') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="id_umkm" class="form-label">Pilih UMKM</label>
-            <select class="form-select  @error('id_umkm') is-invalid @enderror" aria-label="Default select example"
-                name="id_umkm" id="id_umkm">
+            <label for="umkm_id" class="form-label">Pilih UMKM</label>
+            <select class="form-select  @error('umkm_id') is-invalid @enderror" aria-label="Default select example"
+                name="umkm_id" id="umkm_id">
                 <option>Pilih UMKM</option>
                 @foreach ($umkms as $umkm)
                     <option value="{{ $umkm->id }}">{{ $umkm->name }}</option>
                 @endforeach
             </select>
             <div id="emailHelp" class="form-text">UMKM tidak boleh kosong</div>
-            @error('id_umkm')
+            @error('umkm_id')
                 <div class="invalid-feedback">
                     UMKM tidak boleh kosong
                 </div>

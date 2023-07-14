@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_umkm');
-            $table->foreign('id_umkm')->references('id')->on('umkms')->onDelete('cascade');
-            $table->foreignId('id_product');
-            $table->foreign('id_product')->references('id')->on('products')->onDelete('cascade');
+            $table->foreignId('umkm_id');
+            $table->foreign('umkm_id')->references('id')->on('umkms')->onDelete('cascade');
+            $table->foreignId('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('qty');
             $table->timestamps();
         });
