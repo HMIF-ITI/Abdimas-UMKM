@@ -11,13 +11,13 @@ class UmkmPageController extends Controller
     {
         $umkms = Umkm::with(['pelaku_umkm'])->get();
 
-        return view('user/umkmpage', ['umkms' => $umkms]);
+        return view('user/umkm/umkmpage', ['umkms' => $umkms]);
     }
     public function detail($id)
     {
         $umkm = Umkm::with(['pelaku_umkm'])
             ->findOrFail($id);
 
-        return view('user/detailumkmpage', ['umkm' => $umkm]);
+        return view('user/umkm/detailumkmpage', ['umkm' => $umkm]);
     }
 }

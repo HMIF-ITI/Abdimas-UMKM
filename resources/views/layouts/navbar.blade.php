@@ -40,6 +40,12 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
+                                <a class="dropdown-item" href="{{ '/cart' }}">Cart</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
                                 <a class="dropdown-item" href="{{ '/logout' }}">Logout</a>
                             </li>
                         </ul>

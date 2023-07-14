@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductUMKMController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentController;
@@ -64,3 +65,9 @@ Route::get('/detailproductpage/{id}', [ProductPageController::class, 'detail']);
 Route::get('/umkmpage', [UmkmPageController::class, 'index']);
 Route::get('/detailumkmpage/{id}', [UmkmPageController::class, 'detail']);
 Route::get('/profilepage', [ProfileUserController::class, 'index']);
+
+// CART
+Route::post('/cart/{product}', [CartController::class, 'add_toCart'])->name('add_toCart');
+Route::get('/cart', [CartController::class, 'index']);
+Route::patch('/cart/{cart}', [CartController::class, 'update_cart'])->name('update_cart');
+Route::delete('/cart/{cart}', [CartController::class, 'delete_cart'])->name('delete_cart');
