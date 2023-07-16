@@ -45,5 +45,41 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('password'),
             ],
         ]);
+
+        DB::table('category_umkms')->insert([
+            [
+                'name' => 'Makanan',
+            ],
+            [
+                'name' => 'Fashion',
+            ],
+            [
+                'name' => 'Elektronik',
+            ],
+            [
+                'name' => 'Jasa',
+            ],
+            [
+                'name' => 'Lainnya',
+            ],
+        ]);
+
+        DB::table('category_products')->insert([
+            [
+                'name' => 'Makanan',
+            ],
+            [
+                'name' => 'Fashion',
+            ],
+            [
+                'name' => 'Elektronik',
+            ],
+            [
+                'name' => 'Jasa',
+            ],
+            [
+                'name' => 'Lainnya',
+            ],
+        ]);
     }
 }

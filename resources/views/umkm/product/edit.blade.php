@@ -47,6 +47,21 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label for="category_product_id" class="form-label">Pilih Kategori Produk</label>
+                        <select class="form-select  @error('category_product_id') is-invalid @enderror"
+                            aria-label="Default select example" name="category_product_id" id="category_product_id">
+                            <option>{{ $product->category_product->name }}</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('category_product_id')
+                            <div class="invalid-feedback">
+                                Category UMKM tidak boleh kosong
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
                         <input type="text" class="form-control @error('description') is-invalid @enderror"
                             id="exampleInputPassword1" name="description" value="{{ $product->description }}">

@@ -5,17 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model
+class CategoryProduct extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'is_paid',
-        'payment_receipt'
+        'name'
     ];
 
-    public function detail_transactions()
+    public function products()
     {
-        return $this->hasMany(DetailTransaction::class);
+        return $this->hasMany(Product::class);
     }
 }

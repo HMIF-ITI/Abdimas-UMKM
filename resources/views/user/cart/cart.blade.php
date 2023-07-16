@@ -63,11 +63,12 @@
                     Total Belanja : {{ $total_price }}
                 </div>
                 {{-- checkout --}}
-                {{-- <form action="{{ route('checkout') }}" method="POST">
+                <form action="{{ route('checkout') }}" method="POST">
                     @csrf
+                    <input type="hidden" value="haha" name="status">
                     <button type="submit" class="btn btn-primary"
                         @if ($carts->isEmpty()) disabled @endif>Checkout</button>
-                </form> --}}
+                </form>
             </div>
         </div>
     </div>

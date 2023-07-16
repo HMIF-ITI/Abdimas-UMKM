@@ -28,6 +28,11 @@ class DetailTransaction extends Model
         return $this->belongsTo(Product::class);
     }
 
+    public function umkm()
+    {
+        return $this->belongsTo(Umkm::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

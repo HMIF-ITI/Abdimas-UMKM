@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class UmkmPageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $umkms = Umkm::with(['pelaku_umkm'])->get();
+        $keyword = $request->keyword;
+        $umkms = Umkm::with(['pelaku_umkm'])
+            ->where('name', 'LIKE', '%' . $keyword . '%')
+            ->simplePaginate(12);;
 
         return view('user/umkm/umkmpage', ['umkms' => $umkms]);
     }

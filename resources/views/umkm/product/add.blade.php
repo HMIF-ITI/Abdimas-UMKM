@@ -26,6 +26,22 @@
             @enderror
         </div>
         <div class="mb-3">
+            <label for="umkm_id" class="form-label">Pilih Kategori Produk</label>
+            <select class="form-select  @error('category_product_id') is-invalid @enderror"
+                aria-label="Default select example" name="category_product_id" id="category_product_id">
+                <option>Pilih Kategori Produk</option>
+                @foreach ($category_products as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+            <div id="emailHelp" class="form-text">Kategori Produk tidak boleh kosong</div>
+            @error('category_product_id')
+                <div class="invalid-feedback">
+                    Kategori Produk tidak boleh kosong
+                </div>
+            @enderror
+        </div>
+        <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nama Produk</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1"
                 aria-describedby="emailHelp" name="name">

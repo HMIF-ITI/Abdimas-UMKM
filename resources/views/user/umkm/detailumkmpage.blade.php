@@ -6,7 +6,7 @@
 
     <div class="detail">
         <div class="container my-4">
-            <div class="row gx-lg-5">
+            <div class="row gx-lg-5 align-items-center">
                 <div class="col-lg-6 mb-5">
                     <img src="{{ Storage::url($umkm->image) }}" alt="" class="img-fluid rounded">
                 </div>
@@ -15,21 +15,57 @@
                         <h1>{{ $umkm->name }}</h1>
                         <div class="desc-product-location d-flex align-items-center">
                             <img src="{{ asset('css/icon-location.png') }}" alt="">
-                            <h5 class="mx-3">{{ $umkm->address }}</h5>
+                            <h6 class="mx-3" style="margin-bottom: 0">{{ $umkm->address }}</h6>
                         </div>
                         <p class="mt-4">{{ $umkm->description }}</p>
                     </div>
                 </div>
             </div>
-            <div class="row option p-3">
+            <div class="row my-5 informasi-tambahan">
+                <div class="col-lg-3 my-3">
+                    <h5>Informasi Lainnya</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kategori</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ $umkm->category_umkm->name }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-lg-9 my-3">
+                    <h5>Informasi UMKM</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nama Pemilik</th>
+                                <th scope="col">Telepon Pemilik</th>
+                                <th scope="col">Alamat Pemilik</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ $umkm->pelaku_umkm->name }}</td>
+                                <td>{{ $umkm->pelaku_umkm->phone_number }}</td>
+                                <td>{{ $umkm->pelaku_umkm->address }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row option p-3" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="product-name mb-3">
                         <h5>{{ $umkm->name }}</h5>
                         <a href="{{ $umkm->link_address }}">Lihat di Peta >>></a>
                     </div>
                     <div class="product-button">
-                        <a href="" class="btn btn-lg btn-info">Hubungi Penjual</a>
-                        <a href="{{ url('paymentpage') }}" class="btn btn-lg btn-primary">Beli</a>
+                        <a href="{{ url('productpage') }}" class="btn btn-lg btn-primary">Belanja Sekarang</a>
                     </div>
                 </div>
             </div>

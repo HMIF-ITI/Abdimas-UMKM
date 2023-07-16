@@ -11,8 +11,10 @@ class ProductPageController extends Controller
 {
     public function index(Request $request)
     {
+        $keyword = $request->keyword;
         $products = Product::with('umkm')
-            ->get();
+            ->where('name', 'LIKE', '%' . $keyword . '%')
+            ->simplePaginate(12);
         return view('user/product/productpage', ['products' => $products]);
     }
 

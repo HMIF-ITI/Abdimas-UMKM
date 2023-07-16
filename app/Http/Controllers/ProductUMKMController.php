@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryProduct;
 use App\Models\PelakuUmkm;
 use App\Models\Product;
 use App\Models\Umkm;
@@ -26,7 +27,8 @@ class ProductUMKMController extends Controller
     {
 
         $umkm = Umkm::where('pelaku_umkm_id', Auth::id())->orderBy('name', 'ASC')->get();
-        return view('umkm/product/add', ['umkms' => $umkm]);
+        $category_product = CategoryProduct::get();
+        return view('umkm/product/add', ['umkms' => $umkm, 'category_products' => $category_product]);
     }
 
     public function store(Request $request)
@@ -38,6 +40,7 @@ class ProductUMKMController extends Controller
             'price' => 'required|integer',
             'stock' => 'required|integer',
             'umkm_id' => 'required',
+            'category_product_id' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -51,6 +54,7 @@ class ProductUMKMController extends Controller
             'price' => $validated['price'],
             'stock' => $validated['stock'],
             'umkm_id' => $validated['umkm_id'],
+            'category_product_id' => $validated['category_product_id'],
             'image' => $saveImage['image']
         ]);
 
@@ -67,10 +71,11 @@ class ProductUMKMController extends Controller
 
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::with('category_product')->findOrFail($id);
+        $category = CategoryProduct::get();
         $umkm = Umkm::where('pelaku_umkm_id', Auth::id())->orderBy('name', 'ASC')->get();
 
-        return view('umkm/product/edit', ['product' => $product, 'umkms' => $umkm]);
+        return view('umkm/product/edit', ['product' => $product, 'umkms' => $umkm, 'categories' => $category]);
     }
 
     public function update(Request $request, $id)
@@ -83,6 +88,7 @@ class ProductUMKMController extends Controller
             'price' => 'integer',
             'stock' => 'integer',
             'umkm_id' => 'string',
+            'category_product_id' => 'required',
             'image' => 'mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -102,6 +108,7 @@ class ProductUMKMController extends Controller
             'price' => $validated['price'],
             'stock' => $validated['stock'],
             'umkm_id' => $validated['umkm_id'],
+            'category_product_id' => $validated['category_product_id'],
             'image' => $newImage['image'],
         ]);
 

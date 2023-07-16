@@ -27,6 +27,21 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label for="category_umkm_id" class="form-label">Pilih Kategori UMKM</label>
+                        <select class="form-select  @error('category_umkm_id') is-invalid @enderror"
+                            aria-label="Default select example" name="category_umkm_id" id="category_umkm_id">
+                            <option>{{ $umkm->category_umkm->name }}</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                        @error('category_umkm_id')
+                            <div class="invalid-feedback">
+                                Category UMKM tidak boleh kosong
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
                         <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="exampleInputPassword1"
                             name="description">{{ $umkm->description }}</textarea>
@@ -53,6 +68,37 @@
                         @error('link_address')
                             <div class="invalid-feedback">
                                 Link alamat tidak boleh kosong
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Nama Bank</label>
+                        <input type="text" class="form-control @error('bank') is-invalid @enderror"
+                            id="exampleInputEmail1" aria-describedby="emailHelp" name="bank" value="{{ $umkm->bank }}">
+                        <div id="emailHelp" class="form-text">Contoh penulisan : BRI, BNI</div>
+                        @error('bank')
+                            <div class="invalid-feedback">
+                                Nama Bank tidak boleh kosong
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Nomor Rekening</label>
+                        <input type="text" class="form-control @error('norek') is-invalid @enderror"
+                            id="exampleInputPassword1" name="norek" value="{{ $umkm->norek }}">
+                        @error('norek')
+                            <div class="invalid-feedback">
+                                Nomor Rekening tidak boleh kosong
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Nama Pemilik Rekening</label>
+                        <input type="text" class="form-control @error('atas_nama') is-invalid @enderror"
+                            id="exampleInputPassword1" name="atas_nama" value="{{ $umkm->atas_nama }}">
+                        @error('atas_nama')
+                            <div class="invalid-feedback">
+                                Nama pemilik rekening tidak boleh kosong
                             </div>
                         @enderror
                     </div>

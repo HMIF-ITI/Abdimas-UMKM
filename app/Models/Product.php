@@ -11,6 +11,7 @@ class Product extends Model
 
     protected $fillable = [
         'umkm_id',
+        'category_product_id',
         'name',
         'description',
         'stock',
@@ -21,6 +22,11 @@ class Product extends Model
     public function umkm()
     {
         return $this->belongsTo(Umkm::class);
+    }
+
+    public function category_product()
+    {
+        return $this->belongsTo(CategoryProduct::class);
     }
 
     public function carts()

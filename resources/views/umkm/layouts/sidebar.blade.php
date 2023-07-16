@@ -38,7 +38,7 @@
                 <h6 class="collapse-header">Owner Menu</h6>
                 <a class="collapse-item" href="{{ '/umkm' }}">UMKM</a>
                 <a class="collapse-item" href="{{ '/umkm/product' }}">Product</a>
-                <a class="collapse-item" href="{{ '/transaction' }}">Transactions</a>
+                <a class="collapse-item" href="{{ '/umkm/transaction' }}">Transactions</a>
             </div>
         </div>
     </li>
