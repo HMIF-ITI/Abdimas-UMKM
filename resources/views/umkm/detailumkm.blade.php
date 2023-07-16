@@ -24,11 +24,35 @@
                 </div>
             </div>
             <div class="row my-5">
-                <div class="col col-lg-4">
-                    <h4>Action</h4>
-                    <div class="mt-3 d-flex justify-content-between">
-                        <a href="/umkm/detailumkm/{{ $umkm->id }}/edit" class="btn btn-md btn-warning">Edit UMKM</a>
-                        <a href="/umkm/detailumkm/{{ $umkm->id }}/delete" class="btn btn-md btn-danger">Hapus UMKM</a>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Kategori UMKM</th>
+                                        <th scope="col">Bank</th>
+                                        <th scope="col">Nomor Rekening</th>
+                                        <th scope="col">Pemilik Rekening</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $umkm->category_umkm->name }}</td>
+                                        <td>{{ $umkm->bank }}</td>
+                                        <td>{{ $umkm->norek }}</td>
+                                        <td>{{ $umkm->atas_nama }}</td>
+                                        <td>
+                                            <a href="/umkm/detailumkm/{{ $umkm->id }}/edit"
+                                                class="btn btn-md btn-warning">Edit UMKM</a>
+                                            <a href="/umkm/detailumkm/{{ $umkm->id }}/delete"
+                                                class="btn btn-md btn-danger">Hapus UMKM</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

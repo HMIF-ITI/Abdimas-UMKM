@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->boolean('is_paid')->default(false);
-            $table->string('payment_receipt')->nullable();
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreignId('category_product_id');
+            $table->foreign('category_product_id')->references('id')->on('category_products')->onDelete('cascade');
         });
     }
 
@@ -28,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('category_product_id');
+        });
     }
 };

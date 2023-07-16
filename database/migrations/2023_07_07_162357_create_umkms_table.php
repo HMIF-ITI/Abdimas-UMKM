@@ -17,11 +17,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('pelaku_umkm_id');
             $table->foreign('pelaku_umkm_id')->references('id')->on('pelaku_umkms')->onDelete('cascade');
-            $table->string('name');
+            $table->longText('name');
             $table->string('image');
             $table->string('description');
             $table->longText('address');
             $table->string('link_address');
+            $table->string('bank');
+            $table->string('norek');
+            $table->string('atas_nama');
             $table->timestamps();
         });
     }

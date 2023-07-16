@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryUmkm;
 use App\Models\PelakuUmkm;
 use App\Models\Umkm;
 use Illuminate\Http\Request;
@@ -24,7 +25,8 @@ class UmkmController extends Controller
 
         $id = Auth::user()->id;
         $owner = PelakuUmkm::all()->where('id', $id);
-        return view('umkm/add', ['umkms' => $umkm, 'owners' => $owner]);
+        $category = CategoryUmkm::get();
+        return view('umkm/add', ['umkms' => $umkm, 'owners' => $owner, 'categories' => $category]);
     }
 
     public function store(Request $request)
@@ -32,10 +34,14 @@ class UmkmController extends Controller
         // validasi form
         $validated = $request->validate([
             'name' => 'required',
-            'description' => 'required|max:300',
+            'description' => 'required|max:500',
             'link_address' => 'required',
             'address' => 'required',
             'pelaku_umkm_id' => 'required',
+            'category_umkm_id' => 'required',
+            'norek' => 'required',
+            'bank' => 'required',
+            'atas_nama' => 'required',
             'image' => 'required|mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -49,6 +55,10 @@ class UmkmController extends Controller
             'address' => $validated['address'],
             'link_address' => $validated['link_address'],
             'pelaku_umkm_id' => $validated['pelaku_umkm_id'],
+            'category_umkm_id' => $validated['category_umkm_id'],
+            'norek' => $validated['norek'],
+            'bank' => $validated['bank'],
+            'atas_nama' => $validated['atas_nama'],
             'image' => $saveImage['image']
         ]);
 
@@ -64,11 +74,12 @@ class UmkmController extends Controller
 
     public function edit($id)
     {
-        $umkm = Umkm::findOrFail($id);
+        $umkm = Umkm::with(['category_umkm'])->findOrFail($id);
         $id = Auth::user()->id;
         $owner = PelakuUmkm::all()->where('id', $id);
+        $category = CategoryUmkm::get();
 
-        return view('umkm/edit', ['umkm' => $umkm, 'owners' => $owner]);
+        return view('umkm/edit', ['umkm' => $umkm, 'owners' => $owner, 'categories' => $category]);
     }
 
     public function update(Request $request, $id)
@@ -81,6 +92,10 @@ class UmkmController extends Controller
             'link_address' => 'string',
             'address' => 'string',
             'pelaku_umkm_id' => 'string',
+            'category_umkm_id' => 'string',
+            'norek' => 'string',
+            'bank' => 'string',
+            'atas_nama' => 'string',
             'image' => 'mimes:jpg,jpeg,png|max:5120'
         ]);
 
@@ -100,6 +115,10 @@ class UmkmController extends Controller
             'address' => $validated['address'],
             'link_address' => $validated['link_address'],
             'pelaku_umkm_id' => $validated['pelaku_umkm_id'],
+            'category_umkm_id' => $validated['category_umkm_id'],
+            'norek' => $validated['norek'],
+            'bank' => $validated['bank'],
+            'atas_nama' => $validated['atas_nama'],
             'image' => $newImage['image'],
         ]);
 

@@ -11,16 +11,25 @@ class Umkm extends Model
 
     protected $fillable = [
         'pelaku_umkm_id',
+        'category_umkm_id',
         'name',
         'image',
         'description',
         'address',
+        'bank',
+        'norek',
+        'atas_nama',
         'link_address'
     ];
 
     public function pelaku_umkm()
     {
         return $this->belongsTo(PelakuUmkm::class);
+    }
+
+    public function category_umkm()
+    {
+        return $this->belongsTo(CategoryUmkm::class);
     }
 
     public function products()

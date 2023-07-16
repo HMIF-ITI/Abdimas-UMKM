@@ -16,9 +16,9 @@
                 <li class="nav-item mx-2">
                     <a class="nav-link" href="{{ url('umkmpage') }}">UMKM</a>
                 </li>
-                <li class="nav-item mx-2">
+                {{-- <li class="nav-item mx-2">
                     <a class="nav-link" href="{{ '/' }}">About Us</a>
-                </li>
+                </li> --}}
             </ul>
             <div class="kanan navbar-nav ml-auto">
                 @guest
@@ -33,14 +33,20 @@
                             @endauth
                         </a>
                         <ul class="dropdown-menu">
-                            <li>
+                            {{-- <li>
                                 <a class="dropdown-item" href="{{ '/profilepage' }}">Profile User</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li> --}}
+                            <li>
+                                <a class="dropdown-item" href="{{ '/cart' }}">Keranjang</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" href="{{ '/cart' }}">Cart</a>
+                                <a class="dropdown-item" href="{{ '/transaction' }}">Transaksi</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
