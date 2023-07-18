@@ -12,7 +12,7 @@ class UmkmPageController extends Controller
         $keyword = $request->keyword;
         $umkms = Umkm::with(['pelaku_umkm'])
             ->where('name', 'LIKE', '%' . $keyword . '%')
-            ->simplePaginate(12);;
+            ->simplePaginate(12);
 
         return view('user/umkm/umkmpage', ['umkms' => $umkms]);
     }

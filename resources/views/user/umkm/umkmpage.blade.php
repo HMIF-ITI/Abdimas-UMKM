@@ -8,9 +8,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col text-center">
-                    <h1 class="text-white fw-bold mb-4">Product UMKM</h1>
+                    <h1 class="text-white fw-bold mb-4">UMKM</h1>
                     <p class="text-white mb-5 text-opacity-75">
-                        Berikut adalah produk-produk yang ada dimiliki UMKM di Tangerang Selatan
+                        Berikut adalah UMKM-UMKM yang ada di Tangerang Selatan
                     </p>
                 </div>
             </div>

@@ -26,14 +26,12 @@
                             <tr>
                                 <th scope="col">Stock</th>
                                 <th scope="col">Kategori Produk</th>
-                                <th scope="col">Alamat</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>{{ $product->stock }}</td>
                                 <td>{{ $product->category_product->name }}</td>
-                                <td class="mx-3">{{ $product->umkm->address }}</td>
                             </tr>
                         </tbody>
                     </table>

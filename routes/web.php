@@ -66,6 +66,21 @@ Route::middleware('auth:pelakuumkm')->group(function () {
 
 // ADMIN
 Route::get('/admin', [AdminController::class, 'index'])->name('adminindex');
+Route::get('/adminlistuser', [AdminController::class, 'listuser'])->name('showlistuser');
+Route::get('/detailuser/{id}', [AdminController::class, 'detailuser'])->name('detailuser');
+Route::get('/adminlistuser/{id}/delete', [AdminController::class, 'destroyuser'])->name('deletelistuser');
+Route::get('/adminlistowner', [AdminController::class, 'listowner'])->name('showlistowner');
+Route::get('/detailowner/{id}', [AdminController::class, 'detailowner'])->name('detailowner');
+Route::get('/adminlistowner/{id}/delete', [AdminController::class, 'destroyowner'])->name('deletelistowner');
+Route::get('/adminlistumkm', [AdminController::class, 'listumkm'])->name('showlistumkm');
+Route::get('/detailumkm/{id}', [AdminController::class, 'detailumkm'])->name('detailumkm');
+Route::get('/adminlistumkm/{id}/delete', [AdminController::class, 'destroyumkm'])->name('deletelistumkm');
+Route::get('/adminlistproduct', [AdminController::class, 'listproduct'])->name('showlistproduct');
+Route::get('/detailproduct/{id}', [AdminController::class, 'detailproduct'])->name('detailproduct');
+Route::get('/adminlistproduct/{id}/delete', [AdminController::class, 'destroyproduct'])->name('deletelistproduct');
+Route::get('/adminlisttransaction', [AdminController::class, 'listtransaction'])->name('showlisttransaction');
+Route::get('/detailtransaction/{id}', [AdminController::class, 'detailtransaction'])->name('detailtransaction');
+Route::get('/adminlisttransaction/{id}/delete', [AdminController::class, 'destroytransaction'])->name('deletelisttransaction');
 
 
 // USER
