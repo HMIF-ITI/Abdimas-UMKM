@@ -27,12 +27,14 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Kategori</th>
+                                <th scope="col">Kategori UMKM</th>
+                                <th scope="col">Alamat</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>{{ $umkm->category_umkm->name }}</td>
+                                <td>{{ $umkm->address }}</td>
                             </tr>
                         </tbody>
                     </table>

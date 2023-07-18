@@ -7,6 +7,7 @@ use App\Models\DetailTransaction;
 use App\Models\Product;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,7 +21,11 @@ class CheckoutController extends Controller
             return Redirect::back();
         }
 
-        $transaction = Transaction::create([]);
+        $user_id = Auth::user()->id;
+
+        $transaction = Transaction::create([
+            'user_id' => $user_id,
+        ]);
 
         foreach ($carts as $cart) {
             $product = Product::find($cart->product_id);
@@ -49,7 +54,9 @@ class CheckoutController extends Controller
 
     public function show_transaction()
     {
-        $transaction = Transaction::with('detail_transactions')->get();
+        $transaction = Transaction::with('detail_transactions')
+            ->where('user_id', Auth::user()->id)
+            ->get();
 
         return view('user/transaction/index', compact(['transaction']));
     }

@@ -37,6 +37,7 @@ class Umkm extends Model
         return $this->hasMany(Product::class);
     }
 
+
     public function carts()
     {
         return $this->hasMany(Cart::class);

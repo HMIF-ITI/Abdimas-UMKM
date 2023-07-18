@@ -23,7 +23,7 @@
                                 @foreach ($transactions as $transaction)
                                     @foreach ($transaction->detail_transactions as $detail)
                                         @if ($detail->umkm->pelaku_umkm->id != Auth::user()->id)
-                                            <p>Belum Memiliki Transaksi</p>
+                                            <p style="color: #f8f9fc">Belum Memiliki Transaksi</p>
                                         @else
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
