@@ -87,11 +87,6 @@ nav .kanan .signup {
     height: 100vh;
 }
 
-.keunggulan {
-    margin-top: 100px;
-    margin-bottom: 80px;
-}
-
 .title {
     margin-bottom: 40px;
     font-style: normal;
@@ -101,82 +96,15 @@ nav .kanan .signup {
     letter-spacing: 0.01em;
 }
 
-.keunggulan .keunggulan-list {
-    background-color: #ff9d33 !important;
-    border-radius: 8px;
-    padding: 40px 12px 20px 12px;
-    margin-bottom: 20px;
+.unggulan {
+    margin: 100px 0 200px 0;
 }
 
-.keunggulan .keunggulan-list h3 {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-    margin-top: 20px;
-    letter-spacing: 0.01em;
+.unggulan .unggulan-img {
 }
 
-.keunggulan .keunggulan-list p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0.01em;
-    margin-bottom: 12px;
-}
-
-.layanan {
-    margin-bottom: 200px;
-}
-
-.layanan .title {
-    margin-bottom: 40px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 42px;
-    line-height: 63px;
-    letter-spacing: 0.01em;
-}
-
-.layanan .motor {
-    margin-bottom: 40px;
-}
-
-.layanan img {
-    width: 470px;
-    height: 470px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.layanan h3 {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-    letter-spacing: 0.01em;
-}
-
-.layanan p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0.01em;
-    margin-top: 20px;
-}
-
-.layanan a {
-    background: #537fe7;
-    border-radius: 8px;
-    color: #ffffff !important;
-    margin-top: 40px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.01em;
+.unggulan .detail-unggulan .unggulan-p {
+    font-size: 30px;
 }
 
 /* UMKM PRODUCT PAGE */
