@@ -1,7 +1,5 @@
 @extends('admin.app')
 
-@section('title', 'List Transactions')
-
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -46,9 +44,11 @@
                             @else
                                 <td class="text-success">Lunas</td>
                             @endif
-                            <td>
-                                <a href="/detailtransaction/{{ $transaction->id }}" class="text-warning">Detail</a>
-                                <a href="/adminlisttransaction/{{ $transaction->id }}/delete" class="text-danger">Hapus</a>
+                            <td class="d-flex align-items-center">
+                                <a href="/detailtransaction/{{ $transaction->id }}" class="btn btn-warning mr-1 text-white">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
+                                <a href="/adminlisttransaction/{{ $transaction->id }}/delete" class="btn btn-danger"><i
+                                        class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     @endforeach

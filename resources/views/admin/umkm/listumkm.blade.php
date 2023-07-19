@@ -1,7 +1,5 @@
 @extends('admin.app')
 
-@section('title', 'List UMKM')
-
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -48,9 +46,11 @@
                             <td>
                                 <a href="{{ $umkm->link_address }}">{{ $umkm->address }}</a>
                             </td>
-                            <td>
-                                <a href="/detailumkm/{{ $umkm->id }}" class="text-warning">Detail</a>
-                                <a href="/adminlistumkm/{{ $umkm->id }}/delete" class="text-danger">Hapus</a>
+                            <td class="d-flex justify-content-between align-items-center">
+                                <a href="/detailumkm/{{ $umkm->id }}" class="btn btn-warning mr-1 text-white">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
+                                <a href="/adminlistumkm/{{ $umkm->id }}/delete" class="btn btn-danger"><i
+                                        class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     @endforeach

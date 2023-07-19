@@ -14,6 +14,14 @@ class TransactionUMKMController extends Controller
         return view('umkm/transaction/index', ['transactions' => $transaction]);
     }
 
+    public function detail($id)
+    {
+        $transaction = Transaction::with(['detail_transactions.product.category_product', 'detail_transactions.product.umkm.category_umkm', 'user'])
+            ->findOrfail($id);
+
+        return view('umkm/transaction/detail', ['transaction' => $transaction]);
+    }
+
     public function confirm_payment(Transaction $transaction)
     {
         $transaction->update([

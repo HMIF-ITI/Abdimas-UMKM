@@ -59,6 +59,7 @@ Route::middleware('auth:pelakuumkm')->group(function () {
 
     // TRANSACTION UMKM
     Route::get('/umkm/transaction', [TransactionUMKMController::class, 'index']);
+    Route::get('/umkm/detailtransaction/{id}', [TransactionUMKMController::class, 'detail']);
     Route::post('/transaction/{transaction}/confirm', [TransactionUMKMController::class, 'confirm_payment'])->name('confirm_payment');
 });
 

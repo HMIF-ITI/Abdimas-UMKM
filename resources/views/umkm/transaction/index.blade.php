@@ -12,7 +12,6 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">No.</th>
                                 <th scope="col">ID Transaksi</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Action</th>
@@ -22,11 +21,8 @@
                             @auth
                                 @foreach ($transactions as $transaction)
                                     @foreach ($transaction->detail_transactions as $detail)
-                                        @if ($detail->umkm->pelaku_umkm->id != Auth::user()->id)
-                                            <p style="color: #f8f9fc">Belum Memiliki Transaksi</p>
-                                        @else
+                                        @if ($detail->umkm->pelaku_umkm->id == Auth::user()->id)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $transaction->id }}</td>
                                                 @if ($transaction->is_paid == 0)
                                                     <td class="text-danger">Belum Dibayar</td>
@@ -36,28 +32,42 @@
                                                 <td class="d-flex align-items-center">
                                                     @if ($transaction->is_paid == 0)
                                                         <a href="{{ Storage::url($transaction->payment_receipt) }}"
-                                                            class="mx-3">Lihat
-                                                            Bukti
-                                                            Pembayaran</a>
+                                                            class="btn btn-info">
+                                                            <i class="fa-solid fa-eye"></i>
+                                                        </a>
+                                                        <a href="/umkm/detailtransaction/{{ $transaction->id }}"
+                                                            class="mx-1 btn btn-warning">
+
+                                                            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                                                        </a>
                                                         <form action="{{ route('confirm_payment', $transaction) }}"
                                                             method="post">
                                                             @csrf
-                                                            <button class="btn btn-success" type="submit">Confirm</button>
+                                                            <button class="btn btn-success" type="submit">
+                                                                <i class="fa-solid fa-circle-check"></i>
+                                                            </button>
                                                         </form>
                                                     @else
                                                         <a href="{{ Storage::url($transaction->payment_receipt) }}"
-                                                            class="mx-3">Lihat
-                                                            Bukti
-                                                            Pembayaran</a>
+                                                            class="btn btn-info">
+                                                            <i class="fa-solid fa-eye"></i>
+                                                        </a>
+                                                        <a href="/umkm/detailtransaction/{{ $transaction->id }}"
+                                                            class="mx-1 btn btn-warning">
+                                                            <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                                                        </a>
                                                         <form action="{{ route('confirm_payment', $transaction) }}"
                                                             method="post">
                                                             @csrf
-                                                            <button class="btn btn-success" type="submit"
-                                                                disabled>Confirm</button>
+                                                            <button class="btn btn-success" type="submit" disabled>
+                                                                <i class="fa-solid fa-circle-check"></i>
+                                                            </button>
                                                         </form>
                                                     @endif
                                                 </td>
                                             </tr>
+                                        @else
+                                            <p style="color: #f8f9fc">Belum Memiliki Transaksi</p>
                                         @endif
                                     @endforeach
                                 @endforeach

@@ -33,7 +33,7 @@
                             <th scope="col">Tanggal</th>
                             <th scope="col">Status</th>
                             <th scope="col">Pembeli</th>
-                            <th scope="col">Qty - Product - Price</th>
+                            <th scope="col">Qty/Product/Price</th>
                             <th scope="col">Total</th>
                             <th scope="col">Nama UMKM</th>
                             <th scope="col">Pemilik UMKM</th>
@@ -54,7 +54,7 @@
                             <td>{{ $transaction->user->name }}</td>
                             <td>
                                 @foreach ($transaction->detail_transactions as $detail)
-                                    - {{ $detail->qty }} - {{ $detail->product->name }} -
+                                    {{ $detail->qty }}/{{ $detail->product->name }}/
                                     Rp{{ number_format($detail->product->price, 0, ',', '.') }}
                                     <br>
                                     @php
