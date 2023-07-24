@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{ asset('/lte') }}/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/lte') }}/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -47,7 +50,7 @@
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3>{{ $users_count }}</h3>
-                                    <p>User yang terdaftar</p>
+                                    <p>Users</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
@@ -57,10 +60,10 @@
                         <!-- ./col -->
                         <div class="col-lg-4 col-6">
                             <!-- small box -->
-                            <div class="small-box bg-success">
+                            <div class="small-box bg-primary">
                                 <div class="inner">
                                     <h3>{{ $owners_count }}</h3>
-                                    <p>Owner bengkel</p>
+                                    <p>Owners</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
@@ -73,31 +76,31 @@
                             <div class="small-box bg-warning">
                                 <div class="inner">
                                     <h3 class="text-white">{{ $umkms_count }}</h3>
-                                    <p class="text-white">UMKM yang terdaftar</p>
+                                    <p class="text-white">UMKMs</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person-add"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3 class="text-white">{{ $transactions_count }}</h3>
-                                    <p class="text-white">Traksaksi yang terjadi</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-6">
+                        <div class="col-lg-6 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
+                                    <h3 class="text-white">{{ $transactions_count }}</h3>
+                                    <p class="text-white">Transactions</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
                                     <h3>{{ $products_count }}</h3>
-                                    <p>Product yang telah terdaftar</p>
+                                    <p>Products</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>

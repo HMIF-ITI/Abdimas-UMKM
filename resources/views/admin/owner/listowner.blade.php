@@ -1,7 +1,5 @@
 @extends('admin.app')
 
-@section('title', 'List Owner')
-
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -44,9 +42,11 @@
                             <td>{{ $item->phone_number }}</td>
                             <td>{{ $item->nik }}</td>
                             <td>{{ $item->address }}</td>
-                            <td>
-                                <a href="/detailowner/{{ $item->id }}" class="text-warning">Detail</a>
-                                <a href="/adminlistowner/{{ $item->id }}/delete" class="text-danger">Hapus</a>
+                            <td class="d-flex align-items-center justify-content-between">
+                                <a href="/detailowner/{{ $item->id }}" class="btn btn-warning mr-1 text-white">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
+                                <a href="/adminlistowner/{{ $item->id }}/delete" class="btn btn-danger"><i
+                                        class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     @endforeach

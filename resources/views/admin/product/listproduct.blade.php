@@ -1,7 +1,5 @@
 @extends('admin.app')
 
-@section('title', 'List Product')
-
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -48,9 +46,11 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->stock }}</td>
                             <td>{{ $product->umkm->name }}</td>
-                            <td>
-                                <a href="/detailproduct/{{ $product->id }}" class="text-warning">Detail</a>
-                                <a href="/adminlistproduct/{{ $product->id }}/delete" class="text-danger">Hapus</a>
+                            <td class="d-flex align-items-center">
+                                <a href="/detailproduct/{{ $product->id }}" class="btn btn-warning mr-1 text-white">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
+                                <a href="/adminlistproduct/{{ $product->id }}/delete" class="btn btn-danger"><i
+                                        class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                     @endforeach
