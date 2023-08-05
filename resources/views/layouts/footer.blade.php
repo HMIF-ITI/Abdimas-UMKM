@@ -3,9 +3,7 @@
         <div class="row row-cols-lg-3 row-cols-1 justify-content-between">
             <div class="col col-lg-6 mb-lg-0 mb-4">
                 <h2 class="text-white">UMKM</h2>
-                <p class="text-white-50">Website UMKM untuk menampung usaha-usaha milik masyarakat, dengan transaksi
-                    direct ke penjual namun,
-                    penjual diawasi oleh pihak admin untuk diperiksa keaslian usahanya.</p>
+                <p class="text-white-50">Website UMKM untuk menampung usaha-usaha milik masyarakat, dengan transaksi direct ke penjual namun, penjual diawasi oleh pihak admin untuk diperiksa keaslian usahanya.</p>
             </div>
             <div class="col col-lg-2 d-flex flex-column mb-lg-0 mb-4">
                 <h5 class="fw-bold text-white">Menu</h5>
@@ -19,7 +17,6 @@
                     UMKM
                 </a>
                 @guest
-                    <a href="{{ route('login') }}" class="btn btn-lg login btn-outline-primary mx-2">Login</a>
                 @endguest
                 @auth
                     <a href="{{ route('logout') }}" class="text-white-50 mt-2">Logout</a>

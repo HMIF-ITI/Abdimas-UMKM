@@ -79,8 +79,7 @@ nav .kanan .signup {
 
 /* LANDING PAGE */
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url("../css/bengkels.jpg");
+    background-image: url("../css/home.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -96,15 +95,28 @@ nav .kanan .signup {
     letter-spacing: 0.01em;
 }
 
-.unggulan {
+.trend {
     margin: 100px 0 200px 0;
 }
 
-.unggulan .unggulan-img {
+.products {
+    margin: 100px 0 200px 0;
 }
 
-.unggulan .detail-unggulan .unggulan-p {
-    font-size: 30px;
+.products .card {
+    border: none;
+}
+
+.products .card .card-text-price {
+    color: #537fe7;
+}
+
+.umkms {
+    margin: 100px 0 200px 0;
+}
+
+.umkms .card {
+    border: none;
 }
 
 /* UMKM PRODUCT PAGE */
