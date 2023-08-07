@@ -60,15 +60,31 @@
                     </table>
                 </div>
             </div>
+
+            <h5>Produk UMKM {{ $umkm->name }}</h5>
+            <div class="products row row row-cols-lg-4 row-cols-2">
+                @foreach ($umkm->products as $item)
+                <a href="/detailproductpage/{{ $item->id }}">
+                    <div class="col">
+                        <div class="card">
+                            <img src="{{ Storage::url($item->image) }}" alt="ice-cream" >
+                            <p class="nama-produk">{{ $item->name }}</p>
+                            <p class="price">{{ $item->price }}</p>
+                        </div>
+                    </div>
+                </a>
+                @endforeach
+                
+            </div>
             <div class="row option p-3" style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;">
                 <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                     <div class="product-name mb-3">
                         <h5>{{ $umkm->name }}</h5>
                         <a href="{{ $umkm->link_address }}">Lihat di Peta >>></a>
                     </div>
-                    <div class="product-button">
+                    {{-- <div class="product-button">
                         <a href="{{ url('productpage') }}" class="btn btn-lg btn-primary">Belanja Sekarang</a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

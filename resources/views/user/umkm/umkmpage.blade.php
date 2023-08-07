@@ -45,7 +45,7 @@
                         <a href="/detailumkmpage/{{ $umkm->id }}">
                             <div class="card w-100"
                                 style="box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; border-radius: 12px">
-                                <img src="{{ Storage::url($umkm->image) }}" class="card-img-top" alt="...">
+                                <img src="{{ Storage::url($umkm->image) }}" class="card-img-top" style="height: 18em; width: 26em; background-size: cover;">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $umkm->name }}</h5>
                                     <p class="text-secondary" style="margin: 0">{{ $umkm->category_umkm->name }}</p>

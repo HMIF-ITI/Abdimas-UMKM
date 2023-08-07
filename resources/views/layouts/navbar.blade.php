@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
                 <li class="nav-item mx-2">
                     <a class="nav-link" aria-current="page" href="{{ '/' }}">Home</a>
                 </li>
@@ -16,9 +16,6 @@
                 <li class="nav-item mx-2">
                     <a class="nav-link" href="{{ url('umkmpage') }}">UMKM</a>
                 </li>
-                {{-- <li class="nav-item mx-2">
-                    <a class="nav-link" href="{{ '/' }}">About Us</a>
-                </li> --}}
             </ul>
             <div class="kanan navbar-nav ml-auto">
                 @guest

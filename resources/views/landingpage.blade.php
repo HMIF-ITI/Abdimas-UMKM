@@ -3,32 +3,44 @@
 @section('title', 'Welcome')
 
 @section('content')
-{{-- hero --}}
-<div class="hero d-flex align-items-center">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col mx-3">
-                <h1 class="fw-bold mb-4">Selamat Datang di UMKM</h1>
-                <h1 class="fw-bold mb-4">Kelurahan Setu</h1>
-                <p class="mb-5 text-opacity-75">
-                    Website UMKM untuk menampung usaha-usaha milik masyarakat,
-                    dengan transaksi direct ke penjual namun,
-                    <br> penjual diawasi oleh pihak admin untuk diperiksa keaslian usahanya.
+<div class="px-5">
+    {{-- hero --}}
+<div class="banner">
+    <div class="container">
+        <div class="row a align-items-center">
+            <div class="col mx-5">
+                <h1 class="fw-bold mb-4">Selamat Datang di UMKM <br>
+                     di Kelurahan Setu</h1>
+                <p class="mb-5 ">
+                    Website UMKM untuk menampung usaha-usaha milik masyarakat, dengan <br>
+                    transaksi direct ke penjual namun, penjual diawasi oleh pihak admin untuk <br>
+                    diperiksa keaslian usahanya.
                 </p>
             </div>
         </div>
     </div>
 </div>
 
-{{-- trend --}}
-<div class="trend">
-    <div class="row">
-        <div class="col">
-            <h3 class="mx-3">Trend Categories</h3>
-            <div class="trend-categories justify-content-center">
-                <img src="{{ asset('css/trend-fashion.png') }}" alt="trend-fashion" class="mx-3">
-                <img src="{{ asset('css/trend-electronic.png') }}" alt="trend-electronic" class="mx-3">
-                <img src="{{ asset('css/trend-food.png') }}" alt="trend-food" class="mx-3">
+{{-- category --}}
+<div class="category">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="mb-3">Trend Categories</h3>
+            </div>
+        </div>
+        <div class="row row-cols-lg-4 row-cols-2 gx-4">
+            <div class="col d-flex justify-content-center my-3">
+                <img src="{{ asset('css/icon-fd.jpg') }}" alt="">
+            </div>
+            <div class="col d-flex justify-content-center my-3">
+                <img src="{{ asset('css/icon-fashion.jpg') }}" alt="">
+            </div>
+            <div class="col d-flex justify-content-center my-3">
+                <img src="{{ asset('css/icon-elektronik.jpg') }}" alt="">
+            </div>
+            <div class="col d-flex justify-content-center my-3">
+                <img src="{{ asset('css/icon-jasa.jpg') }}" alt="">
             </div>
         </div>
     </div>
@@ -36,71 +48,30 @@
 
 {{-- products --}}
 <div class="products">
-    <div class="row">
-        <div class="col">
-            <h3 class="mx-3">Products</h3>
-            <div class="products-best mx-3 d-flex justify-content-between">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="mb-3">Products</h3>
             </div>
-            <div class="products-best mx-3 d-flex justify-content-between">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
+        </div>
+        <div class="row row-cols-lg-4 row-cols-2 gx-4">
+            @foreach ($products as $product)
+            <a href="/detailproductpage/{{ $product->id }}">
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ Storage::url($product->image) }}" alt="ice-cream" >
+                        <p class="nama-produk">{{ $product->name }}</p>
+                        <p class="price">{{ $product->price }}</p>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
+            </a>
+            @endforeach
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <a href="/productpage" class="btn semua" style="border-radius: 20px">Semua Produk</a>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/ice-cream.png') }}" alt="ice-cream" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Ice Cream</p>
-                        <p class="card-text-price">Rp10.000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="" class="btn btn-md btn-primary align-items-center" style="border-radius: 20px">Semua Produk</a>
             </div>
         </div>
     </div>
@@ -108,60 +79,37 @@
 
 {{-- UMKMs --}}
 <div class="umkms">
-    <div class="row">
-        <div class="col">
-            <h3 class="mx-3">UMKMs</h3>
-            <div class="umkms-best mx-3 d-flex justify-content-between">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/cafe.png') }}" alt="cafe" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Cafe-cafean</p>
-                        <p class="card-text">Tangerang</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/cafe.png') }}" alt="cafe" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Cafe-cafean</p>
-                        <p class="card-text">Tangerang</p>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/cafe.png') }}" alt="cafe" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Cafe-cafean</p>
-                        <p class="card-text">Tangerang</p>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="mb-3">UMKM</h3>
             </div>
-            <div class="umkms-best mx-3 d-flex justify-content-between">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/cafe.png') }}" alt="cafe" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Cafe-cafean</p>
-                        <p class="card-text">Tangerang</p>
+        </div>
+        <div class="row row-cols-lg-3 row-cols-1 gx-4">
+            @foreach ($umkms as $umkm)
+            <a href="/detailumkmpage/{{ $umkm->id }}">
+                <div class="col">
+                    <div class="card">
+                        <img src="{{ Storage::url($umkm->image) }}" alt="cafe" style="height: 18em; width: 26em; background-size: cover;">
+                        <p class="nama-umkm">{{ $umkm->name }}</p>
+                        <div class="lokasi-umkm d-flex align-items-center mb-5">
+                            <img src="{{ asset('css/icon-location.png') }}">
+                            <p class="alamat-umkm" style="white-space: nowrap; overflow:hidden;">{{ $umkm->address }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/cafe.png') }}" alt="cafe" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Cafe-cafean</p>
-                        <p class="card-text">Tangerang</p>
-                    </div>
+            </a>
+            @endforeach    
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-center">
+                    <a href="/umkmpage" class="btn semua">Semua UMKM</a>
                 </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ asset('css/cafe.png') }}" alt="cafe" class="mx-3">
-                    <div class="card-body">
-                        <p class="card-text">Cafe-cafean</p>
-                        <p class="card-text">Tangerang</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="" class="btn btn-md btn-primary align-items-center" style="border-radius: 20px">Semua UMKM</a>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Umkm;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class UmkmPageController extends Controller
 {
@@ -18,7 +19,7 @@ class UmkmPageController extends Controller
     }
     public function detail($id)
     {
-        $umkm = Umkm::with(['pelaku_umkm'])
+        $umkm = Umkm::with(['pelaku_umkm', 'products'])
             ->findOrFail($id);
 
         return view('user/umkm/detailumkmpage', ['umkm' => $umkm]);

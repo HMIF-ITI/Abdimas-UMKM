@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProductUMKMController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaymentController;
@@ -25,9 +26,11 @@ use App\Http\Controllers\UmkmPageController;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage');
-});
+// Route::get('/', function () {
+//     return view('landingpage');
+// });
+
+Route::get('/' , [LandingPageController::class, 'index']);
 
 // AUTH
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -83,13 +86,13 @@ Route::get('/adminlisttransaction', [AdminController::class, 'listtransaction'])
 Route::get('/detailtransaction/{id}', [AdminController::class, 'detailtransaction'])->name('detailtransaction');
 Route::get('/adminlisttransaction/{id}/delete', [AdminController::class, 'destroytransaction'])->name('deletelisttransaction');
 
+Route::get('/productpage', [ProductPageController::class, 'index']);
+Route::get('/detailproductpage/{id}', [ProductPageController::class, 'detail']);
+Route::get('/umkmpage', [UmkmPageController::class, 'index']);
+Route::get('/detailumkmpage/{id}', [UmkmPageController::class, 'detail']);
 
 // USER
 Route::middleware(['auth:web'])->group(function () {
-    Route::get('/productpage', [ProductPageController::class, 'index']);
-    Route::get('/detailproductpage/{id}', [ProductPageController::class, 'detail']);
-    Route::get('/umkmpage', [UmkmPageController::class, 'index']);
-    Route::get('/detailumkmpage/{id}', [UmkmPageController::class, 'detail']);
     Route::get('/profilepage', [ProfileUserController::class, 'index']);
     // cart
     Route::post('/cart/{product}', [CartController::class, 'add_toCart'])->name('add_toCart');

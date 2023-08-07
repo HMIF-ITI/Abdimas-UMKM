@@ -13,8 +13,10 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID Transaksi</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Status</th>                              
                                 <th scope="col">Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -24,6 +26,7 @@
                                         @if ($detail->umkm->pelaku_umkm->id == Auth::user()->id)
                                             <tr>
                                                 <td>{{ $transaction->id }}</td>
+                                                <td>{{ $transaction->created_at->translatedFormat('l d M Y') }}</td>
                                                 @if ($transaction->is_paid == 0)
                                                     <td class="text-danger">Belum Dibayar</td>
                                                 @else
