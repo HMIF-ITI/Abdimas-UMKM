@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('description');
             $table->longText('address');
-            $table->string('link_address');
+            $table->string('link_address')->nullable(true);
             $table->string('bank');
             $table->string('norek');
             $table->string('atas_nama');

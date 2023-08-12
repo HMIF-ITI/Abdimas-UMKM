@@ -35,7 +35,7 @@ class UmkmController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'description' => 'required|max:500',
-            'link_address' => 'required',
+            'link_address',
             'address' => 'required',
             'pelaku_umkm_id' => 'required',
             'category_umkm_id' => 'required',
@@ -53,7 +53,7 @@ class UmkmController extends Controller
             'name' => $validated['name'],
             'description' => $validated['description'],
             'address' => $validated['address'],
-            'link_address' => $validated['link_address'],
+            'link_address' => isset($validated['link_address']) ? $validated['link_address'] : "",
             'pelaku_umkm_id' => $validated['pelaku_umkm_id'],
             'category_umkm_id' => $validated['category_umkm_id'],
             'norek' => $validated['norek'],

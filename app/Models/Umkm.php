@@ -19,7 +19,7 @@ class Umkm extends Model
         'bank',
         'norek',
         'atas_nama',
-        'link_address'
+        // 'link_address'
     ];
 
     public function pelaku_umkm()
