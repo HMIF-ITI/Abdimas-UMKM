@@ -126,10 +126,16 @@ class CheckoutController extends Controller
             $cart->delete();
         }
 
+        // Buat order_id
+        $order_id = 'UMKM-' . $transaction->id . '-' . time();
+
+        // Simpan order_id di transaksi
+        $transaction->update(['order_id' => $order_id]);
+
         // Konfigurasi Snap
         $payload = [
             'transaction_details' => [
-                'order_id' => 'UMKM-' . $transaction->id . '-' . time(), // Tambahkan timestamp
+                'order_id' => $order_id, // Gunakan order_id yang baru dibuat
                 'gross_amount' => $total_price,
             ],
             'customer_details' => [
@@ -141,8 +147,12 @@ class CheckoutController extends Controller
 
         $snapToken = Snap::getSnapToken($payload);
 
+        $transaction->update(['is_paid' => 1]);
+        
+
         return view('user.transaction.payment', compact('snapToken', 'transaction'));
     }
+
 
 
     public function show_transaction()
@@ -181,15 +191,25 @@ class CheckoutController extends Controller
     }
 
     public function handleMidtransNotification(Request $request)
-    {
+{
+    try {
+        // Buat objek notifikasi dari Midtrans
         $notification = new Notification();
 
+        // Log data notifikasi untuk debugging
+        logger()->info('Midtrans Notification:', (array) $notification);
+
+        // Cari transaksi berdasarkan order_id
         $transaction = Transaction::where('order_id', $notification->order_id)->first();
 
+        dd($transaction);
+
         if (!$transaction) {
+            logger()->error('Transaksi tidak ditemukan untuk Order ID: ' . $notification->order_id);
             return response()->json(['error' => 'Transaksi tidak ditemukan'], 404);
         }
 
+        // Perbarui status berdasarkan notifikasi dari Midtrans
         switch ($notification->transaction_status) {
             case 'capture':
             case 'settlement':
@@ -207,7 +227,15 @@ class CheckoutController extends Controller
                 break;
         }
 
+        $transaction->save();
+
+        logger()->info('Transaksi diperbarui untuk Order ID: ' . $notification->order_id);
         return response()->json(['status' => 'success']);
+    } catch (\Exception $e) {
+        logger()->error('Error Midtrans Notification: ' . $e->getMessage());
+        return response()->json(['error' => $e->getMessage()], 500);
     }
+}
+
 
 }
