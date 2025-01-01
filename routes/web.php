@@ -100,6 +100,8 @@ Route::middleware(['auth:web'])->group(function () {
     Route::patch('/cart/{cart}', [CartController::class, 'update_cart'])->name('update_cart');
     Route::delete('/cart/{cart}', [CartController::class, 'delete_cart'])->name('delete_cart');
     // checkout
+    Route::post('/midtrans/notification', [CheckoutController::class, 'handleMidtransNotification']);
+
     Route::post('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
     Route::get('/transaction', [CheckoutController::class, 'show_transaction'])->name('transaction');
     Route::get('/transaction/{transaction}', [CheckoutController::class, 'detail_transaction'])->name('detail_transaction');
